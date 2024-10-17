@@ -1,5 +1,13 @@
 # TODO: Implementa el código del ejercicio aquí
+from abc import abstractmethod, ABC
+from validadorclave.modelo.errores import *
 
-class Validar:
-    def es_valida(self):
-        pass
+
+class ReglaValidacion(ABC):
+
+    def __init__(self, longitud_esperada: int):
+        self._longitud_esperada: int = longitud_esperada
+
+    def _validar_longitud(self, clave: str) -> bool:
+        return len(clave) > self._longitud_esperada
+
