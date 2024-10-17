@@ -24,3 +24,13 @@ class ReglaValidacion(ABC):
             if caracter.islower():
                 return True
         return False
+
+    @staticmethod
+    def _contiene_numero(clave: str) -> bool:
+        for caracter in clave:
+            if caracter.isdigit():
+                return True
+        return False
+@abstractmethod
+    def es_valida(self, clave: str) -> bool:
+        pass
