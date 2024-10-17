@@ -71,3 +71,9 @@ class Validador:
 
     def __init__(self, regla: ReglaValidacion):
         self.regla = regla
+
+    def es_valida(self, clave: str) -> bool:
+        if self.regla.es_valida(clave):
+            return True
+        else:
+            return False
