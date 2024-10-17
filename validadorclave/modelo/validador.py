@@ -47,4 +47,9 @@ class ReglaValidacionGanimedes(ReglaValidacion):
             if caracter in ["@", "_", "#", "$", "%"]:
                 return True
         return False
-    
+
+    def es_valida(self, clave: str) -> bool:
+        if not self._validar_longitud(clave):
+            raise NoCumpleLongitudMinimaError
+
+        
