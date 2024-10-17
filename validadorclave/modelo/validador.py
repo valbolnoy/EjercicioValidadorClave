@@ -52,4 +52,17 @@ class ReglaValidacionGanimedes(ReglaValidacion):
         if not self._validar_longitud(clave):
             raise NoCumpleLongitudMinimaError
 
-        
+        if not self._contiene_mayuscula(clave):
+            raise NoTieneLetraMayusculaError
+
+        if not self._contiene_minuscula(clave):
+            raise NoTieneLetraMinusculaError
+
+        if not self._contiene_numero(clave):
+            raise NoTieneNumeroError
+
+        if not self.contiene_caracter_especial(clave):
+            raise NoTieneCaracterEspecialError
+
+        return True
+
