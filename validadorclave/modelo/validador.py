@@ -66,3 +66,8 @@ class ReglaValidacionGanimedes(ReglaValidacion):
 
         return True
 
+
+class Validador:
+
+    def __init__(self, regla: ReglaValidacion):
+        self.regla = regla
