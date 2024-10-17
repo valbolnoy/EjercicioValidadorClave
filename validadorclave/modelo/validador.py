@@ -35,7 +35,16 @@ class ReglaValidacion(ABC):
     @abstractmethod
     def es_valida(self, clave: str) -> bool:
         pass
+
+
 class ReglaValidacionGanimedes(ReglaValidacion):
 
     def __init__(self):
         super().__init__(8)
+
+    def contiene_caracter_especial(self, clave: str) -> bool:
+        for caracter in clave:
+            if caracter in ["@", "_", "#", "$", "%"]:
+                return True
+        return False
+    
