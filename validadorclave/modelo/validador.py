@@ -77,3 +77,11 @@ class Validador:
             return True
         else:
             return False
+
+
+class ReglaValidacionCalisto(ReglaValidacion):
+
+    def __init__(self):
+        super().__init__(6)
+        
+
