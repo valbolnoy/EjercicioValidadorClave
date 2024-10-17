@@ -31,6 +31,11 @@ class ReglaValidacion(ABC):
             if caracter.isdigit():
                 return True
         return False
-@abstractmethod
+
+    @abstractmethod
     def es_valida(self, clave: str) -> bool:
         pass
+class ReglaValidacionGanimedes(ReglaValidacion):
+
+    def __init__(self):
+        super().__init__(8)
